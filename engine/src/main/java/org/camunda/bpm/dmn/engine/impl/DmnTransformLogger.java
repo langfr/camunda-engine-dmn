@@ -13,11 +13,11 @@
 
 package org.camunda.bpm.dmn.engine.impl;
 
-import java.io.File;
-
 import org.camunda.bpm.dmn.engine.DmnTransformException;
 import org.camunda.bpm.model.dmn.instance.Clause;
 import org.camunda.bpm.model.dmn.instance.Decision;
+
+import java.io.File;
 
 public class DmnTransformLogger extends DmnLogger {
 

@@ -13,9 +13,9 @@
 
 package org.camunda.bpm.dmn.engine;
 
-import java.util.List;
-
 import org.camunda.bpm.dmn.engine.context.DmnDecisionContext;
+
+import java.util.List;
 
 public interface DmnRule extends DmnElement {
 

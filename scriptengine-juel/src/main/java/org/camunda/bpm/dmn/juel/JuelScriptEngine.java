@@ -13,7 +13,9 @@
 
 package org.camunda.bpm.dmn.juel;
 
-import java.io.Reader;
+import de.odysseus.el.ExpressionFactoryImpl;
+import org.camunda.commons.utils.IoUtil;
+
 import javax.el.ELContext;
 import javax.el.ELException;
 import javax.el.ValueExpression;
@@ -25,10 +27,7 @@ import javax.script.ScriptContext;
 import javax.script.ScriptEngineFactory;
 import javax.script.ScriptException;
 import javax.script.SimpleBindings;
-
-import org.camunda.commons.utils.IoUtil;
-
-import de.odysseus.el.ExpressionFactoryImpl;
+import java.io.Reader;
 
 public class JuelScriptEngine extends AbstractScriptEngine implements Compilable {
 

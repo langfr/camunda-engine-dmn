@@ -13,13 +13,13 @@
 
 package org.camunda.bpm.dmn.scriptengine;
 
+import org.camunda.bpm.dmn.engine.DmnEngine;
+
+import javax.script.ScriptEngine;
+import javax.script.ScriptEngineFactory;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
-import javax.script.ScriptEngine;
-import javax.script.ScriptEngineFactory;
-
-import org.camunda.bpm.dmn.engine.DmnEngine;
 
 public class DmnScriptEngineFactory implements ScriptEngineFactory {
 

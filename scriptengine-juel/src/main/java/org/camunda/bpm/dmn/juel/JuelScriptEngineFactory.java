@@ -13,13 +13,13 @@
 
 package org.camunda.bpm.dmn.juel;
 
+import org.camunda.commons.utils.StringUtil;
+
+import javax.script.ScriptEngine;
+import javax.script.ScriptEngineFactory;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
-import javax.script.ScriptEngine;
-import javax.script.ScriptEngineFactory;
-
-import org.camunda.commons.utils.StringUtil;
 
 public class JuelScriptEngineFactory implements ScriptEngineFactory {
 

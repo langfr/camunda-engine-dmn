@@ -13,9 +13,9 @@
 
 package org.camunda.bpm.dmn.engine.handler;
 
-import java.util.Map;
-
 import org.camunda.bpm.model.dmn.instance.DmnModelElementInstance;
+
+import java.util.Map;
 
 public interface DmnElementHandlerRegistry {
 

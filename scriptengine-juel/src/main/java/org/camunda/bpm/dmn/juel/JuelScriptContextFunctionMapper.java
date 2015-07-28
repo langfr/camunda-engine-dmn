@@ -13,9 +13,9 @@
 
 package org.camunda.bpm.dmn.juel;
 
-import java.lang.reflect.Method;
 import javax.el.FunctionMapper;
 import javax.script.ScriptContext;
+import java.lang.reflect.Method;
 
 public class JuelScriptContextFunctionMapper extends FunctionMapper{
 

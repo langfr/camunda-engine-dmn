@@ -13,16 +13,16 @@
 
 package org.camunda.bpm.dmn.engine.impl;
 
+import org.camunda.bpm.dmn.engine.DmnDecision;
+import org.camunda.bpm.dmn.engine.DmnDecisionModel;
+import org.camunda.bpm.dmn.engine.DmnItemDefinition;
+import org.camunda.bpm.dmn.engine.impl.context.DmnDecisionContextImpl;
+
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-
-import org.camunda.bpm.dmn.engine.DmnDecision;
-import org.camunda.bpm.dmn.engine.DmnDecisionModel;
-import org.camunda.bpm.dmn.engine.DmnItemDefinition;
-import org.camunda.bpm.dmn.engine.impl.context.DmnDecisionContextImpl;
 
 public class DmnDecisionModelImpl extends DmnElementImpl implements DmnDecisionModel {
 

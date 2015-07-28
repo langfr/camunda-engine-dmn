@@ -13,10 +13,6 @@
 
 package org.camunda.bpm.dmn.engine.impl;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
-
 import org.camunda.bpm.dmn.engine.DmnEngine;
 import org.camunda.bpm.dmn.engine.DmnEngineConfiguration;
 import org.camunda.bpm.dmn.engine.ScriptEngineResolver;
@@ -29,6 +25,10 @@ import org.camunda.bpm.dmn.engine.impl.transform.DmnTransformerImpl;
 import org.camunda.bpm.dmn.engine.transform.DmnTransformFactory;
 import org.camunda.bpm.dmn.engine.transform.DmnTransformListener;
 import org.camunda.bpm.dmn.engine.transform.DmnTransformer;
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 
 public class DmnEngineConfigurationImpl implements DmnEngineConfiguration {
 

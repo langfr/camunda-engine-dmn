@@ -13,11 +13,6 @@
 
 package org.camunda.bpm.dmn.engine;
 
-import static org.assertj.core.api.Assertions.assertThat;
-import static org.assertj.core.api.Assertions.fail;
-
-import java.io.InputStream;
-
 import org.assertj.core.api.Assertions;
 import org.camunda.bpm.dmn.engine.impl.DmnEngineConfigurationImpl;
 import org.camunda.bpm.model.dmn.Dmn;
@@ -25,6 +20,11 @@ import org.camunda.bpm.model.dmn.DmnModelInstance;
 import org.camunda.commons.utils.IoUtil;
 import org.junit.BeforeClass;
 import org.junit.Test;
+
+import java.io.InputStream;
+
+import static org.assertj.core.api.Assertions.assertThat;
+import static org.assertj.core.api.Assertions.fail;
 
 public class ParseDecisionTest {
 

@@ -13,10 +13,10 @@
 
 package org.camunda.bpm.dmn.engine.impl;
 
+import org.camunda.bpm.dmn.engine.ScriptEngineResolver;
+
 import javax.script.ScriptEngine;
 import javax.script.ScriptEngineManager;
-
-import org.camunda.bpm.dmn.engine.ScriptEngineResolver;
 
 public class DefaultScriptEngineResolver implements ScriptEngineResolver {
   protected ScriptEngineManager scriptEngineManager;

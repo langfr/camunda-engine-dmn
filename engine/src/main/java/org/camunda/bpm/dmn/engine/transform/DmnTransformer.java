@@ -13,9 +13,9 @@
 
 package org.camunda.bpm.dmn.engine.transform;
 
-import java.util.List;
-
 import org.camunda.bpm.dmn.engine.handler.DmnElementHandlerRegistry;
+
+import java.util.List;
 
 public interface DmnTransformer {
 

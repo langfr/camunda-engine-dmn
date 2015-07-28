@@ -13,13 +13,6 @@
 
 package org.camunda.bpm.dmn.engine.impl.context;
 
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import javax.script.Bindings;
-import javax.script.ScriptEngine;
-import javax.script.ScriptException;
-
 import org.camunda.bpm.dmn.engine.DmnClause;
 import org.camunda.bpm.dmn.engine.DmnClauseEntry;
 import org.camunda.bpm.dmn.engine.DmnDecision;
@@ -31,11 +24,17 @@ import org.camunda.bpm.dmn.engine.DmnRule;
 import org.camunda.bpm.dmn.engine.ScriptEngineResolver;
 import org.camunda.bpm.dmn.engine.context.DmnDecisionContext;
 import org.camunda.bpm.dmn.engine.context.DmnVariableContext;
-import org.camunda.bpm.dmn.engine.impl.DmnDecisionOutputEntryImpl;
 import org.camunda.bpm.dmn.engine.impl.DmnDecisionOutputImpl;
 import org.camunda.bpm.dmn.engine.impl.DmnDecisionResultImpl;
 import org.camunda.bpm.dmn.engine.impl.DmnEngineLogger;
 import org.camunda.bpm.dmn.juel.JuelScriptEngineFactory;
+
+import javax.script.Bindings;
+import javax.script.ScriptEngine;
+import javax.script.ScriptException;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 public class DmnDecisionContextImpl implements DmnDecisionContext {
 
@@ -87,7 +86,7 @@ public class DmnDecisionContextImpl implements DmnDecisionContext {
       if (isApplicable(rule, evaluationCache)) {
         DmnDecisionOutput output = getOutput(rule, evaluationCache);
         // TODO: notify Rule Listener
-        decisionResult.addOutput(output);
+        decisionResult.add(output);
       }
       else {
         // TODO: notify Rule Listener
@@ -183,7 +182,7 @@ public class DmnDecisionContextImpl implements DmnDecisionContext {
     for (DmnClauseEntry conclusion : rule.getConclusions()) {
       Object result = evaluate(conclusion, evaluationCache);
       String outputName = conclusion.getClause().getOutputName();
-      output.addEntry(new DmnDecisionOutputEntryImpl(outputName, result));
+      output.put(outputName, result);
     }
     return output;
   }

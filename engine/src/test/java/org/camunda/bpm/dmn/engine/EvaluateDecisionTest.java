@@ -13,15 +13,15 @@
 
 package org.camunda.bpm.dmn.engine;
 
-import static org.camunda.bpm.dmn.engine.test.asserts.DmnAssertions.assertThat;
+import org.camunda.bpm.dmn.engine.test.DecisionResource;
+import org.camunda.bpm.dmn.engine.test.DmnDecisionTest;
+import org.junit.Test;
 
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 
-import org.camunda.bpm.dmn.engine.test.DecisionResource;
-import org.camunda.bpm.dmn.engine.test.DmnDecisionTest;
-import org.junit.Test;
+import static org.camunda.bpm.dmn.engine.test.asserts.DmnAssertions.assertThat;
 
 public class EvaluateDecisionTest extends DmnDecisionTest {
 

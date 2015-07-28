@@ -13,10 +13,6 @@
 
 package org.camunda.bpm.dmn.engine.impl;
 
-import java.io.InputStream;
-import java.util.List;
-import java.util.Map;
-
 import org.camunda.bpm.dmn.engine.DmnDecision;
 import org.camunda.bpm.dmn.engine.DmnDecisionModel;
 import org.camunda.bpm.dmn.engine.DmnDecisionResult;
@@ -31,6 +27,10 @@ import org.camunda.bpm.model.dmn.DmnModelException;
 import org.camunda.bpm.model.dmn.DmnModelInstance;
 import org.camunda.commons.utils.IoUtil;
 import org.camunda.commons.utils.IoUtilException;
+
+import java.io.InputStream;
+import java.util.List;
+import java.util.Map;
 
 public class DmnEngineImpl implements DmnEngine {
 

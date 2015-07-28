@@ -13,15 +13,15 @@
 
 package org.camunda.bpm.dmn.engine.test.asserts;
 
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
 import org.assertj.core.api.AbstractAssert;
 import org.camunda.bpm.dmn.engine.DmnDecision;
 import org.camunda.bpm.dmn.engine.DmnDecisionModel;
 import org.camunda.bpm.dmn.engine.DmnDecisionResult;
 import org.camunda.bpm.dmn.engine.DmnEngine;
+
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 public class DmnEngineAssertion extends AbstractAssert<DmnEngineAssertion, DmnEngine> {
 

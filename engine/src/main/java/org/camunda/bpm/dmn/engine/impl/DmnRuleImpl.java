@@ -13,13 +13,13 @@
 
 package org.camunda.bpm.dmn.engine.impl;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import org.camunda.bpm.dmn.engine.DmnClauseEntry;
 import org.camunda.bpm.dmn.engine.DmnDecisionOutput;
 import org.camunda.bpm.dmn.engine.DmnRule;
 import org.camunda.bpm.dmn.engine.context.DmnDecisionContext;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class DmnRuleImpl extends DmnElementImpl implements DmnRule {
 

@@ -13,13 +13,6 @@
 
 package org.camunda.bpm.dmn.engine.impl.transform;
 
-import java.io.File;
-import java.io.InputStream;
-import java.util.Collection;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
 import org.camunda.bpm.dmn.engine.DmnClause;
 import org.camunda.bpm.dmn.engine.DmnDecision;
 import org.camunda.bpm.dmn.engine.DmnDecisionModel;
@@ -57,6 +50,13 @@ import org.camunda.bpm.model.dmn.instance.ItemDefinition;
 import org.camunda.bpm.model.dmn.instance.OutputEntry;
 import org.camunda.bpm.model.dmn.instance.Rule;
 import org.camunda.bpm.model.dmn.instance.TypeDefinition;
+
+import java.io.File;
+import java.io.InputStream;
+import java.util.Collection;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 public class DmnTransformImpl implements DmnTransform, DmnElementHandlerContext {
 

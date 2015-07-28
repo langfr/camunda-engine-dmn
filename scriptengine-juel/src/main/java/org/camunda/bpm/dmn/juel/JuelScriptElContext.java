@@ -13,6 +13,8 @@
 
 package org.camunda.bpm.dmn.juel;
 
+import de.odysseus.el.util.SimpleResolver;
+
 import javax.el.ArrayELResolver;
 import javax.el.BeanELResolver;
 import javax.el.CompositeELResolver;
@@ -25,8 +27,6 @@ import javax.el.MapELResolver;
 import javax.el.ResourceBundleELResolver;
 import javax.el.VariableMapper;
 import javax.script.ScriptContext;
-
-import de.odysseus.el.util.SimpleResolver;
 
 public class JuelScriptElContext extends ELContext {
 

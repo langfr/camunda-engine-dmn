@@ -13,12 +13,12 @@
 
 package org.camunda.bpm.dmn.engine.impl;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import org.camunda.bpm.dmn.engine.DmnExpression;
 import org.camunda.bpm.dmn.engine.DmnItemDefinition;
 import org.camunda.bpm.dmn.engine.DmnTypeDefinition;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class DmnItemDefinitionImpl extends DmnElementImpl implements DmnItemDefinition {
 

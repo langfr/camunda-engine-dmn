@@ -13,11 +13,6 @@
 
 package org.camunda.bpm.dmn.engine.transform;
 
-import static org.assertj.core.api.Assertions.assertThat;
-
-import java.io.InputStream;
-import java.util.List;
-
 import org.camunda.bpm.dmn.engine.DmnClause;
 import org.camunda.bpm.dmn.engine.DmnClauseEntry;
 import org.camunda.bpm.dmn.engine.DmnDecision;
@@ -36,6 +31,11 @@ import org.camunda.bpm.model.dmn.HitPolicy;
 import org.camunda.commons.utils.IoUtil;
 import org.junit.BeforeClass;
 import org.junit.Test;
+
+import java.io.InputStream;
+import java.util.List;
+
+import static org.assertj.core.api.Assertions.assertThat;
 
 public class DmnTransformTest {
 

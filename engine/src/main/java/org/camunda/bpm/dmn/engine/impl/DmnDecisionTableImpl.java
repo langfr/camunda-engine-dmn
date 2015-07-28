@@ -13,13 +13,13 @@
 
 package org.camunda.bpm.dmn.engine.impl;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import org.camunda.bpm.dmn.engine.DmnClause;
 import org.camunda.bpm.dmn.engine.DmnDecisionTable;
 import org.camunda.bpm.dmn.engine.DmnRule;
 import org.camunda.bpm.model.dmn.HitPolicy;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class DmnDecisionTableImpl extends DmnElementImpl implements DmnDecisionTable {
 

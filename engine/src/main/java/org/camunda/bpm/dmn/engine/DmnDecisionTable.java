@@ -13,9 +13,9 @@
 
 package org.camunda.bpm.dmn.engine;
 
-import java.util.List;
-
 import org.camunda.bpm.model.dmn.HitPolicy;
+
+import java.util.List;
 
 public interface DmnDecisionTable extends DmnDecision {
 

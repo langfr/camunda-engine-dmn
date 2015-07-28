@@ -13,11 +13,11 @@
 
 package org.camunda.bpm.dmn.engine.transform;
 
-import java.io.File;
-import java.io.InputStream;
-
 import org.camunda.bpm.dmn.engine.DmnDecisionModel;
 import org.camunda.bpm.model.dmn.DmnModelInstance;
+
+import java.io.File;
+import java.io.InputStream;
 
 public interface DmnTransform {
 

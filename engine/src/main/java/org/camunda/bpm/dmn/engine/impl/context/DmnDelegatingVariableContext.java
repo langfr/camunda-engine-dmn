@@ -13,10 +13,10 @@
 
 package org.camunda.bpm.dmn.engine.impl.context;
 
+import org.camunda.bpm.dmn.engine.context.DmnVariableContext;
+
 import java.util.HashMap;
 import java.util.Map;
-
-import org.camunda.bpm.dmn.engine.context.DmnVariableContext;
 
 public class DmnDelegatingVariableContext extends DmnVariableContextImpl {
 

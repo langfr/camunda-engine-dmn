@@ -13,10 +13,10 @@
 
 package org.camunda.bpm.dmn.engine;
 
+import org.camunda.bpm.model.dmn.DmnModelInstance;
+
 import java.io.InputStream;
 import java.util.Map;
-
-import org.camunda.bpm.model.dmn.DmnModelInstance;
 
 public interface DmnEngine {
 
