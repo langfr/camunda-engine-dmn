@@ -11,18 +11,21 @@
  * limitations under the License.
  */
 
-package org.camunda.bpm.dmn.engine.context;
+package org.camunda.bpm.dmn.engine;
 
+import java.util.List;
 import java.util.Map;
 
-public interface DmnDecisionContextBuilder<T> {
+public interface DmnDecisionTableRule {
 
-  DmnDecisionContextBuilder<T> setVariableContext(DmnVariableContext variableContext);
+  /**
+   * @return the id of the rule from the DMN XML
+   */
+  String getKey();
 
-  DmnDecisionContextBuilder<T> setVariable(String name, Object value);
-
-  DmnDecisionContextBuilder<T> setVariables(Map<String, Object> variables);
-
-  T build();
+  /**
+   * @return the output values of this rule
+   */
+  Map<String, DmnDecisionTableValue> getOutputs();
 
 }

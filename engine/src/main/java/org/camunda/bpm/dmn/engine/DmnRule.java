@@ -23,8 +23,4 @@ public interface DmnRule extends DmnElement {
 
   List<DmnClauseEntry> getConclusions();
 
-  boolean isApplicable(DmnDecisionContext decisionContext);
-
-  DmnDecisionOutput getOutput(DmnDecisionContext decisionContext);
-
 }

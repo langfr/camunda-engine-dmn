@@ -50,14 +50,6 @@ public class DmnRuleImpl extends DmnElementImpl implements DmnRule {
     conclusions.add(conclusion);
   }
 
-  public boolean isApplicable(DmnDecisionContext decisionContext) {
-    return decisionContext.isApplicable(this);
-  }
-
-  public DmnDecisionOutput getOutput(DmnDecisionContext decisionContext) {
-    return decisionContext.getOutput(this);
-  }
-
   public String toString() {
     return "DmnRuleImpl{" +
       "key='" + key + '\'' +

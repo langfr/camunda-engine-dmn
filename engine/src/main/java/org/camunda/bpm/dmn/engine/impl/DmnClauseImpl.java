@@ -69,6 +69,10 @@ public class DmnClauseImpl extends DmnElementImpl implements DmnClause {
     inputEntries.add(inputEntry);
   }
 
+  public boolean isInputClause() {
+    return inputExpression != null || (inputEntries != null && !inputEntries.isEmpty());
+  }
+
   public List<DmnExpression> getOutputEntries() {
     return outputEntries;
   }
@@ -79,6 +83,10 @@ public class DmnClauseImpl extends DmnElementImpl implements DmnClause {
 
   public void addOutputEntry(DmnExpression outputEntry) {
     outputEntries.add(outputEntry);
+  }
+
+  public boolean isOutputClause() {
+    return outputEntries != null && !outputEntries.isEmpty();
   }
 
   public String toString() {

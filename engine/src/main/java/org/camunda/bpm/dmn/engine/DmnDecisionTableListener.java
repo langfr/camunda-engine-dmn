@@ -11,12 +11,20 @@
  * limitations under the License.
  */
 
-package org.camunda.bpm.dmn.engine.context;
+package org.camunda.bpm.dmn.engine;
 
-import org.camunda.bpm.dmn.engine.DmnEngineConfiguration;
+/**
+ * A listener which will be notified after a decision table
+ * was evaluated.
+ */
+public interface DmnDecisionTableListener {
 
-public interface DmnContextFactory {
-
-  DmnDecisionContext createDecisionContext(DmnEngineConfiguration engineConfiguration);
+  /**
+   * Will be called after a decision table was evaluated.
+   *
+   * @param decisionTable the evaluated decision table
+   * @param decisionTableResult the result of the decision table evaluation
+   */
+  void notify(DmnDecisionTable decisionTable, DmnDecisionTableResult decisionTableResult);
 
 }
