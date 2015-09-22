@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Definitions xmlns="http://www.omg.org/spec/DMN/20130901" xmlns:camunda="http://camunda.org/schema/1.0/dmn" id="definitions" name="camunda" namespace="http://camunda.org/dmn">
+  <ItemDefinition id="itemDefinition1">  <typeDefinition>string</typeDefinition>
+</ItemDefinition>
+  <ItemDefinition id="itemDefinition2">  <typeDefinition>string</typeDefinition>
+</ItemDefinition>
+  <Decision id="feelStringTest" name="FEEL String Test">
+    <DecisionTable id="decisionTable" isComplete="true" isConsistent="true" hitPolicy="COLLECT">
+      <clause id="clause1" name="String Input">
+        <inputExpression id="inputExpression1">
+          <itemDefinition href="#itemDefinition1" />
+          <text>input</text>
+        </inputExpression>
+        <inputEntry id="LiteralExpression_1v5gz1m">        <text><![CDATA["VIP"]]></text>
+</inputEntry>
+        <inputEntry id="LiteralExpression_1tov4f0">        <text><![CDATA[not("VIP")]]></text>
+</inputEntry>
+        <inputEntry id="LiteralExpression_0t2v90q">        <text>a</text>
+</inputEntry>
+        <inputEntry id="LiteralExpression_00ngwmv">        <text>not(a)</text>
+</inputEntry>
+        <inputEntry id="LiteralExpression_0k542oj">        <text><![CDATA["VIP","Gold","Silver"]]></text>
+</inputEntry>
+        <inputEntry id="LiteralExpression_19qjk00">        <text><![CDATA[not("VIP","Gold","Silver")]]></text>
+</inputEntry>
+        <inputEntry id="LiteralExpression_04zrwep">        <text>a,b,c</text>
+</inputEntry>
+        <inputEntry id="LiteralExpression_1gvcpdl">        <text>not(a,b,c)</text>
+</inputEntry>
+        <inputEntry id="LiteralExpression_0rjnccc">        <text><![CDATA[a,"Gold",c]]></text>
+</inputEntry>
+        <inputEntry id="LiteralExpression_1ik7or1">        <text><![CDATA[not("VIP",b,c)]]></text>
+</inputEntry>
+      </clause>
+      <clause id="clause2" name="Result" camunda:output="output">
+        <outputDefinition href="#itemDefinition2" />
+        <outputEntry id="LiteralExpression_0eow6h6">        <text><![CDATA["String Constant Equals"]]></text>
+</outputEntry>
+        <outputEntry id="LiteralExpression_05zuubx">        <text><![CDATA["String Constant Not Equals"]]></text>
+</outputEntry>
+        <outputEntry id="LiteralExpression_129qchj">        <text><![CDATA["String Variable Equals"]]></text>
+</outputEntry>
+        <outputEntry id="LiteralExpression_11f9ouk">        <text><![CDATA["String Variable Not Equals"]]></text>
+</outputEntry>
+        <outputEntry id="LiteralExpression_1iksuqe">        <text><![CDATA["String Constant List Equals"]]></text>
+</outputEntry>
+        <outputEntry id="LiteralExpression_0494idg">        <text><![CDATA["String Constant List Not Equals"]]></text>
+</outputEntry>
+        <outputEntry id="LiteralExpression_1bs1mg9">        <text><![CDATA["String Variable List Equals"]]></text>
+</outputEntry>
+        <outputEntry id="LiteralExpression_1vqqhph">        <text><![CDATA["String Variable Not Equals"]]></text>
+</outputEntry>
+        <outputEntry id="LiteralExpression_1e6qdl0">        <text><![CDATA["String Mixed List Equals"]]></text>
+</outputEntry>
+        <outputEntry id="LiteralExpression_1yo2az3">        <text><![CDATA["String Mixed List Not Equals"]]></text>
+</outputEntry>
+      </clause>
+      <rule id="DecisionRule_0dl4fx3">
+        <condition>LiteralExpression_1v5gz1m</condition>
+        <conclusion>LiteralExpression_0eow6h6</conclusion>
+      </rule>
+      <rule id="DecisionRule_1h5oid8">
+        <condition>LiteralExpression_1tov4f0</condition>
+        <conclusion>LiteralExpression_05zuubx</conclusion>
+      </rule>
+      <rule id="DecisionRule_1spp9ss">
+        <condition>LiteralExpression_0t2v90q</condition>
+        <conclusion>LiteralExpression_129qchj</conclusion>
+      </rule>
+      <rule id="DecisionRule_1x8394i">
+        <condition>LiteralExpression_00ngwmv</condition>
+        <conclusion>LiteralExpression_11f9ouk</conclusion>
+      </rule>
+      <rule id="DecisionRule_1w3hyrn">
+        <condition>LiteralExpression_0k542oj</condition>
+        <conclusion>LiteralExpression_1iksuqe</conclusion>
+      </rule>
+      <rule id="DecisionRule_1k7v0pb">
+        <condition>LiteralExpression_19qjk00</condition>
+        <conclusion>LiteralExpression_0494idg</conclusion>
+      </rule>
+      <rule id="DecisionRule_18dulji">
+        <condition>LiteralExpression_04zrwep</condition>
+        <conclusion>LiteralExpression_1bs1mg9</conclusion>
+      </rule>
+      <rule id="DecisionRule_13bhpqb">
+        <condition>LiteralExpression_1gvcpdl</condition>
+        <conclusion>LiteralExpression_1vqqhph</conclusion>
+      </rule>
+      <rule id="DecisionRule_14jq07e">
+        <condition>LiteralExpression_0rjnccc</condition>
+        <conclusion>LiteralExpression_1e6qdl0</conclusion>
+      </rule>
+      <rule id="DecisionRule_1alg8zw">
+        <condition>LiteralExpression_1ik7or1</condition>
+        <conclusion>LiteralExpression_1yo2az3</conclusion>
+      </rule>
+    </DecisionTable>
+  </Decision>
+</Definitions>

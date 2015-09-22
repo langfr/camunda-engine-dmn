@@ -1,0 +1,756 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Definitions xmlns="http://www.omg.org/spec/DMN/20130901" xmlns:camunda="http://camunda.org/schema/1.0/dmn" id="definitions" name="camunda" namespace="http://camunda.org/dmn">
+  <ItemDefinition id="itemDefinition1">  <typeDefinition>date</typeDefinition>
+</ItemDefinition>
+  <ItemDefinition id="itemDefinition2">  <typeDefinition>string</typeDefinition>
+</ItemDefinition>
+  <Decision id="feelDateTest" name="FEEL Date Test">
+    <DecisionTable id="decisionTable" isComplete="true" isConsistent="true" hitPolicy="COLLECT">
+      <clause id="clause1" name="Date Input">
+        <inputExpression id="inputExpression1">
+          <itemDefinition href="#itemDefinition1" />
+          <text>input</text>
+        </inputExpression>
+        <inputEntry id="LiteralExpression_19rgbd6">        <text>date("2015-12-12")</text>
+</inputEntry>
+        <inputEntry id="LiteralExpression_1ppgvmu">        <text>not(date("2015-12-12"))</text>
+</inputEntry>
+        <inputEntry id="LiteralExpression_0uqgirr">        <text><![CDATA[<date("2015-12-12")]]></text>
+</inputEntry>
+        <inputEntry id="LiteralExpression_1qc3pgz">        <text><![CDATA[<=date("2015-12-12")]]></text>
+</inputEntry>
+        <inputEntry id="LiteralExpression_13tc6p4">        <text><![CDATA[>date("2015-12-12")]]></text>
+</inputEntry>
+        <inputEntry id="LiteralExpression_1rfocm6">        <text><![CDATA[>=date("2015-12-12")]]></text>
+</inputEntry>
+        <inputEntry id="LiteralExpression_1s45z4t">        <text>date("2015-12-12"),date("2016-06-06")</text>
+</inputEntry>
+        <inputEntry id="LiteralExpression_0a29l4y">        <text>not(date("2015-12-12"),date("2016-06-06"))</text>
+</inputEntry>
+        <inputEntry id="LiteralExpression_1fc9qly">        <text><![CDATA[<date("2015-12-12"),>date("2015-12-12"),date("2016-06-06")]]></text>
+</inputEntry>
+        <inputEntry id="LiteralExpression_037p3gg">        <text><![CDATA[not(<date("2015-12-12"),>date("2015-12-12"),date("2016-06-06"))]]></text>
+</inputEntry>
+        <inputEntry id="LiteralExpression_139opvg">        <text>[date("2015-12-12")..date("2016-06-06")]</text>
+</inputEntry>
+        <inputEntry id="LiteralExpression_0assj5b">        <text><![CDATA[not(<date("2015-12-12"))]]></text>
+</inputEntry>
+        <inputEntry id="LiteralExpression_0wyqn0e">        <text><![CDATA[not(<=date("2015-12-12"))]]></text>
+</inputEntry>
+        <inputEntry id="LiteralExpression_0xbsijg">        <text><![CDATA[not(>date("2015-12-12"))]]></text>
+</inputEntry>
+        <inputEntry id="LiteralExpression_0ji1vyd">        <text><![CDATA[not(>=date("2015-12-12"))]]></text>
+</inputEntry>
+        <inputEntry id="LiteralExpression_1m1briq">        <text>not([date("2015-12-12")..date("2016-06-06")])</text>
+</inputEntry>
+        <inputEntry id="LiteralExpression_10ti8k1">        <text>(date("2015-12-12")..date("2016-06-06")]</text>
+</inputEntry>
+        <inputEntry id="LiteralExpression_0m8ifkq">        <text>not((date("2015-12-12")..date("2016-06-06")])</text>
+</inputEntry>
+        <inputEntry id="LiteralExpression_1p0ozu9">        <text>[date("2015-12-12")..date("2016-06-06"))</text>
+</inputEntry>
+        <inputEntry id="LiteralExpression_1qwd774">        <text>not([date("2015-12-12")..date("2016-06-06")))</text>
+</inputEntry>
+        <inputEntry id="LiteralExpression_1hvq6v4">        <text>(date("2015-12-12")..date("2016-06-06"))</text>
+</inputEntry>
+        <inputEntry id="LiteralExpression_1tryvt4">        <text>not((date("2015-12-12")..date("2016-06-06")))</text>
+</inputEntry>
+        <inputEntry id="LiteralExpression_05su01h">        <text>]date("2015-12-12")..date("2016-06-06")]</text>
+</inputEntry>
+        <inputEntry id="LiteralExpression_0lf1cai">        <text>not(]date("2015-12-12")..date("2016-06-06")])</text>
+</inputEntry>
+        <inputEntry id="LiteralExpression_0qa1tju">        <text>[date("2015-12-12")..date("2016-06-06")[</text>
+</inputEntry>
+        <inputEntry id="LiteralExpression_08ksd05">        <text>not([date("2015-12-12")..date("2016-06-06")[)</text>
+</inputEntry>
+        <inputEntry id="LiteralExpression_15otpz2">        <text>]date("2015-12-12")..date("2016-06-06")[</text>
+</inputEntry>
+        <inputEntry id="LiteralExpression_08r5wcr">        <text>not(]date("2015-12-12")..date("2016-06-06")[)</text>
+</inputEntry>
+        <inputEntry id="LiteralExpression_0fjnzv5">        <text>(date("2015-12-12")..date("2016-06-06")[</text>
+</inputEntry>
+        <inputEntry id="LiteralExpression_11hxofh">        <text>not((date("2015-12-12")..date("2016-06-06")[)</text>
+</inputEntry>
+        <inputEntry id="LiteralExpression_0o8f0y1">        <text>]date("2015-12-12")..date("2016-06-06"))</text>
+</inputEntry>
+        <inputEntry id="LiteralExpression_1oczr90">        <text>not(]date("2015-12-12")..date("2016-06-06")))</text>
+</inputEntry>
+        <inputEntry id="LiteralExpression_1yua1nj">        <text><![CDATA[date("2015-12-12"),>=date("2016-06-06"),]date("2016-01-01")..date("2016-04-04")]]]></text>
+</inputEntry>
+        <inputEntry id="LiteralExpression_02g2x4t">        <text><![CDATA[not(date("2015-12-12"),>=date("2016-06-06"),]date("2016-01-01")..date("2016-04-04")])]]></text>
+</inputEntry>
+        <inputEntry id="LiteralExpressionVariable_19rgbd6">        <text>x</text>
+</inputEntry>
+        <inputEntry id="LiteralExpressionVariable_1ppgvmu">        <text>not(x)</text>
+</inputEntry>
+        <inputEntry id="LiteralExpressionVariable_0uqgirr">        <text><![CDATA[<x]]></text>
+</inputEntry>
+        <inputEntry id="LiteralExpressionVariable_1qc3pgz">        <text><![CDATA[<=x]]></text>
+</inputEntry>
+        <inputEntry id="LiteralExpressionVariable_13tc6p4">        <text><![CDATA[>x]]></text>
+</inputEntry>
+        <inputEntry id="LiteralExpressionVariable_1rfocm6">        <text><![CDATA[>=x]]></text>
+</inputEntry>
+        <inputEntry id="LiteralExpressionVariable_1s45z4t">        <text>x,y</text>
+</inputEntry>
+        <inputEntry id="LiteralExpressionVariable_0a29l4y">        <text>not(x,y)</text>
+</inputEntry>
+        <inputEntry id="LiteralExpressionVariable_1fc9qly">        <text><![CDATA[<x,>x,y]]></text>
+</inputEntry>
+        <inputEntry id="LiteralExpressionVariable_037p3gg">        <text><![CDATA[not(<x,>x,y)]]></text>
+</inputEntry>
+        <inputEntry id="LiteralExpressionVariable_139opvg">        <text>[x..y]</text>
+</inputEntry>
+        <inputEntry id="LiteralExpressionVariable_0assj5b">        <text><![CDATA[not(<x)]]></text>
+</inputEntry>
+        <inputEntry id="LiteralExpressionVariable_0wyqn0e">        <text><![CDATA[not(<=x)]]></text>
+</inputEntry>
+        <inputEntry id="LiteralExpressionVariable_0xbsijg">        <text><![CDATA[not(>x)]]></text>
+</inputEntry>
+        <inputEntry id="LiteralExpressionVariable_0ji1vyd">        <text><![CDATA[not(>=x)]]></text>
+</inputEntry>
+        <inputEntry id="LiteralExpressionVariable_1m1briq">        <text>not([x..y])</text>
+</inputEntry>
+        <inputEntry id="LiteralExpressionVariable_10ti8k1">        <text>(x..y]</text>
+</inputEntry>
+        <inputEntry id="LiteralExpressionVariable_0m8ifkq">        <text>not((x..y])</text>
+</inputEntry>
+        <inputEntry id="LiteralExpressionVariable_1p0ozu9">        <text>[x..y)</text>
+</inputEntry>
+        <inputEntry id="LiteralExpressionVariable_1qwd774">        <text>not([x..y))</text>
+</inputEntry>
+        <inputEntry id="LiteralExpressionVariable_1hvq6v4">        <text>(x..y)</text>
+</inputEntry>
+        <inputEntry id="LiteralExpressionVariable_1tryvt4">        <text>not((x..y))</text>
+</inputEntry>
+        <inputEntry id="LiteralExpressionVariable_05su01h">        <text>]x..y]</text>
+</inputEntry>
+        <inputEntry id="LiteralExpressionVariable_0lf1cai">        <text>not(]x..y])</text>
+</inputEntry>
+        <inputEntry id="LiteralExpressionVariable_0qa1tju">        <text>[x..y[</text>
+</inputEntry>
+        <inputEntry id="LiteralExpressionVariable_08ksd05">        <text>not([x..y[)</text>
+</inputEntry>
+        <inputEntry id="LiteralExpressionVariable_15otpz2">        <text>]x..y[</text>
+</inputEntry>
+        <inputEntry id="LiteralExpressionVariable_08r5wcr">        <text>not(]x..y[)</text>
+</inputEntry>
+        <inputEntry id="LiteralExpressionVariable_0fjnzv5">        <text>(x..y[</text>
+</inputEntry>
+        <inputEntry id="LiteralExpressionVariable_11hxofh">        <text>not((x..y[)</text>
+</inputEntry>
+        <inputEntry id="LiteralExpressionVariable_0o8f0y1">        <text>]x..y)</text>
+</inputEntry>
+        <inputEntry id="LiteralExpressionVariable_1oczr90">        <text>not(]x..y))</text>
+</inputEntry>
+        <inputEntry id="LiteralExpressionVariable_1yua1nj">        <text><![CDATA[x,>=y,]v..w]]]></text>
+</inputEntry>
+        <inputEntry id="LiteralExpressionVariable_02g2x4t">        <text><![CDATA[not(x,>=y,]v..w])]]></text>
+</inputEntry>
+        <inputEntry id="LiteralExpressionMixed_1s45z4t">        <text>x,date("2016-06-06")</text>
+</inputEntry>
+        <inputEntry id="LiteralExpressionMixed_0a29l4y">        <text>not(x,date("2016-06-06"))</text>
+</inputEntry>
+        <inputEntry id="LiteralExpressionMixed_1fc9qly">        <text><![CDATA[<x,>x,date("2016-06-06")]]></text>
+</inputEntry>
+        <inputEntry id="LiteralExpressionMixed_037p3gg">        <text><![CDATA[not(<x,>x,date("2016-06-06"))]]></text>
+</inputEntry>
+        <inputEntry id="LiteralExpressionMixed_139opvg">        <text>[x..date("2016-06-06")]</text>
+</inputEntry>
+        <inputEntry id="LiteralExpressionMixed_1m1briq">        <text>not([x..date("2016-06-06")])</text>
+</inputEntry>
+        <inputEntry id="LiteralExpressionMixed_10ti8k1">        <text>(x..date("2016-06-06")]</text>
+</inputEntry>
+        <inputEntry id="LiteralExpressionMixed_0m8ifkq">        <text>not((x..date("2016-06-06")])</text>
+</inputEntry>
+        <inputEntry id="LiteralExpressionMixed_1p0ozu9">        <text>[x..date("2016-06-06"))</text>
+</inputEntry>
+        <inputEntry id="LiteralExpressionMixed_1qwd774">        <text>not([x..date("2016-06-06")))</text>
+</inputEntry>
+        <inputEntry id="LiteralExpressionMixed_1hvq6v4">        <text>(x..date("2016-06-06"))</text>
+</inputEntry>
+        <inputEntry id="LiteralExpressionMixed_1tryvt4">        <text>not((x..date("2016-06-06")))</text>
+</inputEntry>
+        <inputEntry id="LiteralExpressionMixed_05su01h">        <text>]x..date("2016-06-06")]</text>
+</inputEntry>
+        <inputEntry id="LiteralExpressionMixed_0lf1cai">        <text>not(]x..date("2016-06-06")])</text>
+</inputEntry>
+        <inputEntry id="LiteralExpressionMixed_0qa1tju">        <text>[x..date("2016-06-06")[</text>
+</inputEntry>
+        <inputEntry id="LiteralExpressionMixed_08ksd05">        <text>not([x..date("2016-06-06")[)</text>
+</inputEntry>
+        <inputEntry id="LiteralExpressionMixed_15otpz2">        <text>]x..date("2016-06-06")[</text>
+</inputEntry>
+        <inputEntry id="LiteralExpressionMixed_08r5wcr">        <text>not(]x..date("2016-06-06")[)</text>
+</inputEntry>
+        <inputEntry id="LiteralExpressionMixed_0fjnzv5">        <text>(x..date("2016-06-06")[</text>
+</inputEntry>
+        <inputEntry id="LiteralExpressionMixed_11hxofh">        <text>not((x..date("2016-06-06")[)</text>
+</inputEntry>
+        <inputEntry id="LiteralExpressionMixed_0o8f0y1">        <text>]x..date("2016-06-06"))</text>
+</inputEntry>
+        <inputEntry id="LiteralExpressionMixed_1oczr90">        <text>not(]x..date("2016-06-06")))</text>
+</inputEntry>
+        <inputEntry id="LiteralExpressionMixed_1yua1nj">        <text><![CDATA[x,>=date("2016-06-06"),]date("2016-01-01")..w]]]></text>
+</inputEntry>
+        <inputEntry id="LiteralExpressionMixed_02g2x4t">        <text><![CDATA[not(x,>=date("2016-06-06"),]date("2016-01-01")..w])]]></text>
+</inputEntry>
+      </clause>
+      <clause id="clause2" name="Result" camunda:output="output">
+        <outputDefinition href="#itemDefinition2" />
+        <outputEntry id="LiteralExpression_0aqn13j">        <text><![CDATA["Date Constant Equals"]]></text>
+</outputEntry>
+        <outputEntry id="LiteralExpression_1sd0wsq">        <text><![CDATA["Date Constant Not Equals"]]></text>
+</outputEntry>
+        <outputEntry id="LiteralExpression_0rdmpvj">        <text><![CDATA["Date Constant Greater"]]></text>
+</outputEntry>
+        <outputEntry id="LiteralExpression_0ykbsie">        <text><![CDATA["Date Constant Not Greater"]]></text>
+</outputEntry>
+        <outputEntry id="LiteralExpression_131jxsr">        <text><![CDATA["Date Constant Greater Equals"]]></text>
+</outputEntry>
+        <outputEntry id="LiteralExpression_0opwovn">        <text><![CDATA["Date Constant Not Greater Equals"]]></text>
+</outputEntry>
+        <outputEntry id="LiteralExpression_0ksunuk">        <text><![CDATA["Date Constant Less"]]></text>
+</outputEntry>
+        <outputEntry id="LiteralExpression_0fci6n0">        <text><![CDATA["Date Constant Not Less"]]></text>
+</outputEntry>
+        <outputEntry id="LiteralExpression_0uhoqua">        <text><![CDATA["Date Constant Less Equals"]]></text>
+</outputEntry>
+        <outputEntry id="LiteralExpression_13pm745">        <text><![CDATA["Date Constant Not Less Equals"]]></text>
+</outputEntry>
+        <outputEntry id="LiteralExpression_0dugtnx">        <text><![CDATA["Date Constant Range []"]]></text>
+</outputEntry>
+        <outputEntry id="LiteralExpression_0ji90sy">        <text><![CDATA["Date Constant Not Range []"]]></text>
+</outputEntry>
+        <outputEntry id="LiteralExpression_0u5jn4b">        <text><![CDATA["Date Constant Range (]"]]></text>
+</outputEntry>
+        <outputEntry id="LiteralExpression_1bm08wt">        <text><![CDATA["Date Constant Not Range (]"]]></text>
+</outputEntry>
+        <outputEntry id="LiteralExpression_0yoodl5">        <text><![CDATA["Date Constant Range ]]"]]></text>
+</outputEntry>
+        <outputEntry id="LiteralExpression_1h2yr0l">        <text><![CDATA["Date Constant Range [)"]]></text>
+</outputEntry>
+        <outputEntry id="LiteralExpression_0nu8cye">        <text><![CDATA["Date Constant Range [["]]></text>
+</outputEntry>
+        <outputEntry id="LiteralExpression_06c17mf">        <text><![CDATA["Date Constant Range ()"]]></text>
+</outputEntry>
+        <outputEntry id="LiteralExpression_0tej91h">        <text><![CDATA["Date Constant Range (["]]></text>
+</outputEntry>
+        <outputEntry id="LiteralExpression_0g0z6ie">        <text><![CDATA["Date Constant Range ])"]]></text>
+</outputEntry>
+        <outputEntry id="LiteralExpression_1t4mlix">        <text><![CDATA["Date Constant Range ]["]]></text>
+</outputEntry>
+        <outputEntry id="LiteralExpression_11y5pwq">        <text><![CDATA["Date Constant Not Range ]]"]]></text>
+</outputEntry>
+        <outputEntry id="LiteralExpression_0tfvveo">        <text><![CDATA["Date Constant Not Range [)"]]></text>
+</outputEntry>
+        <outputEntry id="LiteralExpression_0kwgo9e">        <text><![CDATA["Date Constant Not Range [["]]></text>
+</outputEntry>
+        <outputEntry id="LiteralExpression_0uvow4p">        <text><![CDATA["Date Constant Not Range ()"]]></text>
+</outputEntry>
+        <outputEntry id="LiteralExpression_09q4czi">        <text><![CDATA["Date Constant Not Range (["]]></text>
+</outputEntry>
+        <outputEntry id="LiteralExpression_1l16pd8">        <text><![CDATA["Date Constant Not Range ])"]]></text>
+</outputEntry>
+        <outputEntry id="LiteralExpression_1xy23tp">        <text><![CDATA["Date Constant Not Range ]["]]></text>
+</outputEntry>
+        <outputEntry id="LiteralExpression_09p5mq4">        <text><![CDATA["Date Constant List Equals"]]></text>
+</outputEntry>
+        <outputEntry id="LiteralExpression_1pm6o1g">        <text><![CDATA["Date Constant List Not Equals"]]></text>
+</outputEntry>
+        <outputEntry id="LiteralExpression_0ai034p">        <text><![CDATA["Date Constant List Comparison"]]></text>
+</outputEntry>
+        <outputEntry id="LiteralExpression_1c5lqeq">        <text><![CDATA["Date Constant List Not Comparison"]]></text>
+</outputEntry>
+        <outputEntry id="LiteralExpression_1th5k8f">        <text><![CDATA["Date Constant List Mixed"]]></text>
+</outputEntry>
+        <outputEntry id="LiteralExpression_1pg5vck">        <text><![CDATA["Date Constant List Not Mixed"]]></text>
+</outputEntry>
+        <outputEntry id="LiteralExpressionVariable_0aqn13j">        <text><![CDATA["Date Variable Equals"]]></text>
+</outputEntry>
+        <outputEntry id="LiteralExpressionVariable_1sd0wsq">        <text><![CDATA["Date Variable Not Equals"]]></text>
+</outputEntry>
+        <outputEntry id="LiteralExpressionVariable_0rdmpvj">        <text><![CDATA["Date Variable Greater"]]></text>
+</outputEntry>
+        <outputEntry id="LiteralExpressionVariable_0ykbsie">        <text><![CDATA["Date Variable Not Greater"]]></text>
+</outputEntry>
+        <outputEntry id="LiteralExpressionVariable_131jxsr">        <text><![CDATA["Date Variable Greater Equals"]]></text>
+</outputEntry>
+        <outputEntry id="LiteralExpressionVariable_0opwovn">        <text><![CDATA["Date Variable Not Greater Equals"]]></text>
+</outputEntry>
+        <outputEntry id="LiteralExpressionVariable_0ksunuk">        <text><![CDATA["Date Variable Less"]]></text>
+</outputEntry>
+        <outputEntry id="LiteralExpressionVariable_0fci6n0">        <text><![CDATA["Date Variable Not Less"]]></text>
+</outputEntry>
+        <outputEntry id="LiteralExpressionVariable_0uhoqua">        <text><![CDATA["Date Variable Less Equals"]]></text>
+</outputEntry>
+        <outputEntry id="LiteralExpressionVariable_13pm745">        <text><![CDATA["Date Variable Not Less Equals"]]></text>
+</outputEntry>
+        <outputEntry id="LiteralExpressionVariable_0dugtnx">        <text><![CDATA["Date Variable Range []"]]></text>
+</outputEntry>
+        <outputEntry id="LiteralExpressionVariable_0ji90sy">        <text><![CDATA["Date Variable Not Range []"]]></text>
+</outputEntry>
+        <outputEntry id="LiteralExpressionVariable_0u5jn4b">        <text><![CDATA["Date Variable Range (]"]]></text>
+</outputEntry>
+        <outputEntry id="LiteralExpressionVariable_1bm08wt">        <text><![CDATA["Date Variable Not Range (]"]]></text>
+</outputEntry>
+        <outputEntry id="LiteralExpressionVariable_0yoodl5">        <text><![CDATA["Date Variable Range ]]"]]></text>
+</outputEntry>
+        <outputEntry id="LiteralExpressionVariable_1h2yr0l">        <text><![CDATA["Date Variable Range [)"]]></text>
+</outputEntry>
+        <outputEntry id="LiteralExpressionVariable_0nu8cye">        <text><![CDATA["Date Variable Range [["]]></text>
+</outputEntry>
+        <outputEntry id="LiteralExpressionVariable_06c17mf">        <text><![CDATA["Date Variable Range ()"]]></text>
+</outputEntry>
+        <outputEntry id="LiteralExpressionVariable_0tej91h">        <text><![CDATA["Date Variable Range (["]]></text>
+</outputEntry>
+        <outputEntry id="LiteralExpressionVariable_0g0z6ie">        <text><![CDATA["Date Variable Range ])"]]></text>
+</outputEntry>
+        <outputEntry id="LiteralExpressionVariable_1t4mlix">        <text><![CDATA["Date Variable Range ]["]]></text>
+</outputEntry>
+        <outputEntry id="LiteralExpressionVariable_11y5pwq">        <text><![CDATA["Date Variable Not Range ]]"]]></text>
+</outputEntry>
+        <outputEntry id="LiteralExpressionVariable_0tfvveo">        <text><![CDATA["Date Variable Not Range [)"]]></text>
+</outputEntry>
+        <outputEntry id="LiteralExpressionVariable_0kwgo9e">        <text><![CDATA["Date Variable Not Range [["]]></text>
+</outputEntry>
+        <outputEntry id="LiteralExpressionVariable_0uvow4p">        <text><![CDATA["Date Variable Not Range ()"]]></text>
+</outputEntry>
+        <outputEntry id="LiteralExpressionVariable_09q4czi">        <text><![CDATA["Date Variable Not Range (["]]></text>
+</outputEntry>
+        <outputEntry id="LiteralExpressionVariable_1l16pd8">        <text><![CDATA["Date Variable Not Range ])"]]></text>
+</outputEntry>
+        <outputEntry id="LiteralExpressionVariable_1xy23tp">        <text><![CDATA["Date Variable Not Range ]["]]></text>
+</outputEntry>
+        <outputEntry id="LiteralExpressionVariable_09p5mq4">        <text><![CDATA["Date Variable List Equals"]]></text>
+</outputEntry>
+        <outputEntry id="LiteralExpressionVariable_1pm6o1g">        <text><![CDATA["Date Variable List Not Equals"]]></text>
+</outputEntry>
+        <outputEntry id="LiteralExpressionVariable_0ai034p">        <text><![CDATA["Date Variable List Comparison"]]></text>
+</outputEntry>
+        <outputEntry id="LiteralExpressionVariable_1c5lqeq">        <text><![CDATA["Date Variable List Not Comparison"]]></text>
+</outputEntry>
+        <outputEntry id="LiteralExpressionVariable_1th5k8f">        <text><![CDATA["Date Variable List Mixed"]]></text>
+</outputEntry>
+        <outputEntry id="LiteralExpressionVariable_1pg5vck">        <text><![CDATA["Date Variable List Not Mixed"]]></text>
+</outputEntry>
+        <outputEntry id="LiteralExpressionMixed_0dugtnx">        <text><![CDATA["Date Mixed Range []"]]></text>
+</outputEntry>
+        <outputEntry id="LiteralExpressionMixed_0ji90sy">        <text><![CDATA["Date Mixed Not Range []"]]></text>
+</outputEntry>
+        <outputEntry id="LiteralExpressionMixed_0u5jn4b">        <text><![CDATA["Date Mixed Range (]"]]></text>
+</outputEntry>
+        <outputEntry id="LiteralExpressionMixed_1bm08wt">        <text><![CDATA["Date Mixed Not Range (]"]]></text>
+</outputEntry>
+        <outputEntry id="LiteralExpressionMixed_0yoodl5">        <text><![CDATA["Date Mixed Range ]]"]]></text>
+</outputEntry>
+        <outputEntry id="LiteralExpressionMixed_1h2yr0l">        <text><![CDATA["Date Mixed Range [)"]]></text>
+</outputEntry>
+        <outputEntry id="LiteralExpressionMixed_0nu8cye">        <text><![CDATA["Date Mixed Range [["]]></text>
+</outputEntry>
+        <outputEntry id="LiteralExpressionMixed_06c17mf">        <text><![CDATA["Date Mixed Range ()"]]></text>
+</outputEntry>
+        <outputEntry id="LiteralExpressionMixed_0tej91h">        <text><![CDATA["Date Mixed Range (["]]></text>
+</outputEntry>
+        <outputEntry id="LiteralExpressionMixed_0g0z6ie">        <text><![CDATA["Date Mixed Range ])"]]></text>
+</outputEntry>
+        <outputEntry id="LiteralExpressionMixed_1t4mlix">        <text><![CDATA["Date Mixed Range ]["]]></text>
+</outputEntry>
+        <outputEntry id="LiteralExpressionMixed_11y5pwq">        <text><![CDATA["Date Mixed Not Range ]]"]]></text>
+</outputEntry>
+        <outputEntry id="LiteralExpressionMixed_0tfvveo">        <text><![CDATA["Date Mixed Not Range [)"]]></text>
+</outputEntry>
+        <outputEntry id="LiteralExpressionMixed_0kwgo9e">        <text><![CDATA["Date Mixed Not Range [["]]></text>
+</outputEntry>
+        <outputEntry id="LiteralExpressionMixed_0uvow4p">        <text><![CDATA["Date Mixed Not Range ()"]]></text>
+</outputEntry>
+        <outputEntry id="LiteralExpressionMixed_09q4czi">        <text><![CDATA["Date Mixed Not Range (["]]></text>
+</outputEntry>
+        <outputEntry id="LiteralExpressionMixed_1l16pd8">        <text><![CDATA["Date Mixed Not Range ])"]]></text>
+</outputEntry>
+        <outputEntry id="LiteralExpressionMixed_1xy23tp">        <text><![CDATA["Date Mixed Not Range ]["]]></text>
+</outputEntry>
+        <outputEntry id="LiteralExpressionMixed_09p5mq4">        <text><![CDATA["Date Mixed List Equals"]]></text>
+</outputEntry>
+        <outputEntry id="LiteralExpressionMixed_1pm6o1g">        <text><![CDATA["Date Mixed List Not Equals"]]></text>
+</outputEntry>
+        <outputEntry id="LiteralExpressionMixed_0ai034p">        <text><![CDATA["Date Mixed List Comparison"]]></text>
+</outputEntry>
+        <outputEntry id="LiteralExpressionMixed_1c5lqeq">        <text><![CDATA["Date Mixed List Not Comparison"]]></text>
+</outputEntry>
+        <outputEntry id="LiteralExpressionMixed_1th5k8f">        <text><![CDATA["Date Mixed List Mixed"]]></text>
+</outputEntry>
+        <outputEntry id="LiteralExpressionMixed_1pg5vck">        <text><![CDATA["Date Mixed List Not Mixed"]]></text>
+</outputEntry>
+      </clause>
+      <rule id="DecisionRule_0qwgrby">
+        <condition>LiteralExpression_19rgbd6</condition>
+        <conclusion>LiteralExpression_0aqn13j</conclusion>
+      </rule>
+      <rule id="DecisionRule_0kklcpq">
+        <condition>LiteralExpression_1ppgvmu</condition>
+        <conclusion>LiteralExpression_1sd0wsq</conclusion>
+      </rule>
+      <rule id="DecisionRule_07lr8pq">
+        <condition>LiteralExpression_0uqgirr</condition>
+        <conclusion>LiteralExpression_0rdmpvj</conclusion>
+      </rule>
+      <rule id="DecisionRule_0lat78r">
+        <condition>LiteralExpression_0assj5b</condition>
+        <conclusion>LiteralExpression_0ykbsie</conclusion>
+      </rule>
+      <rule id="DecisionRule_12eqzzd">
+        <condition>LiteralExpression_1qc3pgz</condition>
+        <conclusion>LiteralExpression_131jxsr</conclusion>
+      </rule>
+      <rule id="DecisionRule_003ntl0">
+        <condition>LiteralExpression_0wyqn0e</condition>
+        <conclusion>LiteralExpression_0opwovn</conclusion>
+      </rule>
+      <rule id="DecisionRule_0f76b4v">
+        <condition>LiteralExpression_13tc6p4</condition>
+        <conclusion>LiteralExpression_0ksunuk</conclusion>
+      </rule>
+      <rule id="DecisionRule_1bqeldm">
+        <condition>LiteralExpression_0xbsijg</condition>
+        <conclusion>LiteralExpression_0fci6n0</conclusion>
+      </rule>
+      <rule id="DecisionRule_11v3uf8">
+        <condition>LiteralExpression_1rfocm6</condition>
+        <conclusion>LiteralExpression_0uhoqua</conclusion>
+      </rule>
+      <rule id="DecisionRule_0ugcxn2">
+        <condition>LiteralExpression_0ji1vyd</condition>
+        <conclusion>LiteralExpression_13pm745</conclusion>
+      </rule>
+      <rule id="DecisionRule_0pyvukh">
+        <condition>LiteralExpression_139opvg</condition>
+        <conclusion>LiteralExpression_0dugtnx</conclusion>
+      </rule>
+      <rule id="DecisionRule_052lzmt">
+        <condition>LiteralExpression_1m1briq</condition>
+        <conclusion>LiteralExpression_0ji90sy</conclusion>
+      </rule>
+      <rule id="DecisionRule_0im7o16">
+        <condition>LiteralExpression_10ti8k1</condition>
+        <conclusion>LiteralExpression_0u5jn4b</conclusion>
+      </rule>
+      <rule id="DecisionRule_1tw0e47">
+        <condition>LiteralExpression_0m8ifkq</condition>
+        <conclusion>LiteralExpression_1bm08wt</conclusion>
+      </rule>
+      <rule id="DecisionRule_03tm46l">
+        <condition>LiteralExpression_05su01h</condition>
+        <conclusion>LiteralExpression_0yoodl5</conclusion>
+      </rule>
+      <rule id="DecisionRule_0dv4o53">
+        <condition>LiteralExpression_0lf1cai</condition>
+        <conclusion>LiteralExpression_11y5pwq</conclusion>
+      </rule>
+      <rule id="DecisionRule_0puyzet">
+        <condition>LiteralExpression_1p0ozu9</condition>
+        <conclusion>LiteralExpression_1h2yr0l</conclusion>
+      </rule>
+      <rule id="DecisionRule_0fav4hi">
+        <condition>LiteralExpression_1qwd774</condition>
+        <conclusion>LiteralExpression_0tfvveo</conclusion>
+      </rule>
+      <rule id="DecisionRule_1jin2ny">
+        <condition>LiteralExpression_0qa1tju</condition>
+        <conclusion>LiteralExpression_0nu8cye</conclusion>
+      </rule>
+      <rule id="DecisionRule_1c5oybk">
+        <condition>LiteralExpression_08ksd05</condition>
+        <conclusion>LiteralExpression_0kwgo9e</conclusion>
+      </rule>
+      <rule id="DecisionRule_1bggej9">
+        <condition>LiteralExpression_1hvq6v4</condition>
+        <conclusion>LiteralExpression_06c17mf</conclusion>
+      </rule>
+      <rule id="DecisionRule_10049nz">
+        <condition>LiteralExpression_1tryvt4</condition>
+        <conclusion>LiteralExpression_0uvow4p</conclusion>
+      </rule>
+      <rule id="DecisionRule_1musfkd">
+        <condition>LiteralExpression_0fjnzv5</condition>
+        <conclusion>LiteralExpression_0tej91h</conclusion>
+      </rule>
+      <rule id="DecisionRule_1ywcizg">
+        <condition>LiteralExpression_11hxofh</condition>
+        <conclusion>LiteralExpression_09q4czi</conclusion>
+      </rule>
+      <rule id="DecisionRule_079pqfu">
+        <condition>LiteralExpression_0o8f0y1</condition>
+        <conclusion>LiteralExpression_0g0z6ie</conclusion>
+      </rule>
+      <rule id="DecisionRule_0qda6fb">
+        <condition>LiteralExpression_1oczr90</condition>
+        <conclusion>LiteralExpression_1l16pd8</conclusion>
+      </rule>
+      <rule id="DecisionRule_1b8fvnz">
+        <condition>LiteralExpression_15otpz2</condition>
+        <conclusion>LiteralExpression_1t4mlix</conclusion>
+      </rule>
+      <rule id="DecisionRule_11dbpo0">
+        <condition>LiteralExpression_08r5wcr</condition>
+        <conclusion>LiteralExpression_1xy23tp</conclusion>
+      </rule>
+      <rule id="DecisionRule_1fycu55">
+        <condition>LiteralExpression_1s45z4t</condition>
+        <conclusion>LiteralExpression_09p5mq4</conclusion>
+      </rule>
+      <rule id="DecisionRule_1umfw43">
+        <condition>LiteralExpression_0a29l4y</condition>
+        <conclusion>LiteralExpression_1pm6o1g</conclusion>
+      </rule>
+      <rule id="DecisionRule_0wp8lfl">
+        <condition>LiteralExpression_1fc9qly</condition>
+        <conclusion>LiteralExpression_0ai034p</conclusion>
+      </rule>
+      <rule id="DecisionRule_1vx4c8u">
+        <condition>LiteralExpression_037p3gg</condition>
+        <conclusion>LiteralExpression_1c5lqeq</conclusion>
+      </rule>
+      <rule id="DecisionRule_1ts1s8k">
+        <condition>LiteralExpression_1yua1nj</condition>
+        <conclusion>LiteralExpression_1th5k8f</conclusion>
+      </rule>
+      <rule id="DecisionRule_1ggbxtx">
+        <condition>LiteralExpression_02g2x4t</condition>
+        <conclusion>LiteralExpression_1pg5vck</conclusion>
+      </rule>
+      <rule id="DecisionRuleVariable_0qwgrby">
+        <condition>LiteralExpressionVariable_19rgbd6</condition>
+        <conclusion>LiteralExpressionVariable_0aqn13j</conclusion>
+      </rule>
+      <rule id="DecisionRuleVariable_0kklcpq">
+        <condition>LiteralExpressionVariable_1ppgvmu</condition>
+        <conclusion>LiteralExpressionVariable_1sd0wsq</conclusion>
+      </rule>
+      <rule id="DecisionRuleVariable_07lr8pq">
+        <condition>LiteralExpressionVariable_0uqgirr</condition>
+        <conclusion>LiteralExpressionVariable_0rdmpvj</conclusion>
+      </rule>
+      <rule id="DecisionRuleVariable_0lat78r">
+        <condition>LiteralExpressionVariable_0assj5b</condition>
+        <conclusion>LiteralExpressionVariable_0ykbsie</conclusion>
+      </rule>
+      <rule id="DecisionRuleVariable_12eqzzd">
+        <condition>LiteralExpressionVariable_1qc3pgz</condition>
+        <conclusion>LiteralExpressionVariable_131jxsr</conclusion>
+      </rule>
+      <rule id="DecisionRuleVariable_003ntl0">
+        <condition>LiteralExpressionVariable_0wyqn0e</condition>
+        <conclusion>LiteralExpressionVariable_0opwovn</conclusion>
+      </rule>
+      <rule id="DecisionRuleVariable_0f76b4v">
+        <condition>LiteralExpressionVariable_13tc6p4</condition>
+        <conclusion>LiteralExpressionVariable_0ksunuk</conclusion>
+      </rule>
+      <rule id="DecisionRuleVariable_1bqeldm">
+        <condition>LiteralExpressionVariable_0xbsijg</condition>
+        <conclusion>LiteralExpressionVariable_0fci6n0</conclusion>
+      </rule>
+      <rule id="DecisionRuleVariable_11v3uf8">
+        <condition>LiteralExpressionVariable_1rfocm6</condition>
+        <conclusion>LiteralExpressionVariable_0uhoqua</conclusion>
+      </rule>
+      <rule id="DecisionRuleVariable_0ugcxn2">
+        <condition>LiteralExpressionVariable_0ji1vyd</condition>
+        <conclusion>LiteralExpressionVariable_13pm745</conclusion>
+      </rule>
+      <rule id="DecisionRuleVariable_0pyvukh">
+        <condition>LiteralExpressionVariable_139opvg</condition>
+        <conclusion>LiteralExpressionVariable_0dugtnx</conclusion>
+      </rule>
+      <rule id="DecisionRuleVariable_052lzmt">
+        <condition>LiteralExpressionVariable_1m1briq</condition>
+        <conclusion>LiteralExpressionVariable_0ji90sy</conclusion>
+      </rule>
+      <rule id="DecisionRuleVariable_0im7o16">
+        <condition>LiteralExpressionVariable_10ti8k1</condition>
+        <conclusion>LiteralExpressionVariable_0u5jn4b</conclusion>
+      </rule>
+      <rule id="DecisionRuleVariable_1tw0e47">
+        <condition>LiteralExpressionVariable_0m8ifkq</condition>
+        <conclusion>LiteralExpressionVariable_1bm08wt</conclusion>
+      </rule>
+      <rule id="DecisionRuleVariable_03tm46l">
+        <condition>LiteralExpressionVariable_05su01h</condition>
+        <conclusion>LiteralExpressionVariable_0yoodl5</conclusion>
+      </rule>
+      <rule id="DecisionRuleVariable_0dv4o53">
+        <condition>LiteralExpressionVariable_0lf1cai</condition>
+        <conclusion>LiteralExpressionVariable_11y5pwq</conclusion>
+      </rule>
+      <rule id="DecisionRuleVariable_0puyzet">
+        <condition>LiteralExpressionVariable_1p0ozu9</condition>
+        <conclusion>LiteralExpressionVariable_1h2yr0l</conclusion>
+      </rule>
+      <rule id="DecisionRuleVariable_0fav4hi">
+        <condition>LiteralExpressionVariable_1qwd774</condition>
+        <conclusion>LiteralExpressionVariable_0tfvveo</conclusion>
+      </rule>
+      <rule id="DecisionRuleVariable_1jin2ny">
+        <condition>LiteralExpressionVariable_0qa1tju</condition>
+        <conclusion>LiteralExpressionVariable_0nu8cye</conclusion>
+      </rule>
+      <rule id="DecisionRuleVariable_1c5oybk">
+        <condition>LiteralExpressionVariable_08ksd05</condition>
+        <conclusion>LiteralExpressionVariable_0kwgo9e</conclusion>
+      </rule>
+      <rule id="DecisionRuleVariable_1bggej9">
+        <condition>LiteralExpressionVariable_1hvq6v4</condition>
+        <conclusion>LiteralExpressionVariable_06c17mf</conclusion>
+      </rule>
+      <rule id="DecisionRuleVariable_10049nz">
+        <condition>LiteralExpressionVariable_1tryvt4</condition>
+        <conclusion>LiteralExpressionVariable_0uvow4p</conclusion>
+      </rule>
+      <rule id="DecisionRuleVariable_1musfkd">
+        <condition>LiteralExpressionVariable_0fjnzv5</condition>
+        <conclusion>LiteralExpressionVariable_0tej91h</conclusion>
+      </rule>
+      <rule id="DecisionRuleVariable_1ywcizg">
+        <condition>LiteralExpressionVariable_11hxofh</condition>
+        <conclusion>LiteralExpressionVariable_09q4czi</conclusion>
+      </rule>
+      <rule id="DecisionRuleVariable_079pqfu">
+        <condition>LiteralExpressionVariable_0o8f0y1</condition>
+        <conclusion>LiteralExpressionVariable_0g0z6ie</conclusion>
+      </rule>
+      <rule id="DecisionRuleVariable_0qda6fb">
+        <condition>LiteralExpressionVariable_1oczr90</condition>
+        <conclusion>LiteralExpressionVariable_1l16pd8</conclusion>
+      </rule>
+      <rule id="DecisionRuleVariable_1b8fvnz">
+        <condition>LiteralExpressionVariable_15otpz2</condition>
+        <conclusion>LiteralExpressionVariable_1t4mlix</conclusion>
+      </rule>
+      <rule id="DecisionRuleVariable_11dbpo0">
+        <condition>LiteralExpressionVariable_08r5wcr</condition>
+        <conclusion>LiteralExpressionVariable_1xy23tp</conclusion>
+      </rule>
+      <rule id="DecisionRuleVariable_1fycu55">
+        <condition>LiteralExpressionVariable_1s45z4t</condition>
+        <conclusion>LiteralExpressionVariable_09p5mq4</conclusion>
+      </rule>
+      <rule id="DecisionRuleVariable_1umfw43">
+        <condition>LiteralExpressionVariable_0a29l4y</condition>
+        <conclusion>LiteralExpressionVariable_1pm6o1g</conclusion>
+      </rule>
+      <rule id="DecisionRuleVariable_0wp8lfl">
+        <condition>LiteralExpressionVariable_1fc9qly</condition>
+        <conclusion>LiteralExpressionVariable_0ai034p</conclusion>
+      </rule>
+      <rule id="DecisionRuleVariable_1vx4c8u">
+        <condition>LiteralExpressionVariable_037p3gg</condition>
+        <conclusion>LiteralExpressionVariable_1c5lqeq</conclusion>
+      </rule>
+      <rule id="DecisionRuleVariable_1ts1s8k">
+        <condition>LiteralExpressionVariable_1yua1nj</condition>
+        <conclusion>LiteralExpressionVariable_1th5k8f</conclusion>
+      </rule>
+      <rule id="DecisionRuleVariable_1ggbxtx">
+        <condition>LiteralExpressionVariable_02g2x4t</condition>
+        <conclusion>LiteralExpressionVariable_1pg5vck</conclusion>
+      </rule>
+      <rule id="DecisionRuleMixed_0pyvukh">
+        <condition>LiteralExpressionMixed_139opvg</condition>
+        <conclusion>LiteralExpressionMixed_0dugtnx</conclusion>
+      </rule>
+      <rule id="DecisionRuleMixed_052lzmt">
+        <condition>LiteralExpressionMixed_1m1briq</condition>
+        <conclusion>LiteralExpressionMixed_0ji90sy</conclusion>
+      </rule>
+      <rule id="DecisionRuleMixed_0im7o16">
+        <condition>LiteralExpressionMixed_10ti8k1</condition>
+        <conclusion>LiteralExpressionMixed_0u5jn4b</conclusion>
+      </rule>
+      <rule id="DecisionRuleMixed_1tw0e47">
+        <condition>LiteralExpressionMixed_0m8ifkq</condition>
+        <conclusion>LiteralExpressionMixed_1bm08wt</conclusion>
+      </rule>
+      <rule id="DecisionRuleMixed_03tm46l">
+        <condition>LiteralExpressionMixed_05su01h</condition>
+        <conclusion>LiteralExpressionMixed_0yoodl5</conclusion>
+      </rule>
+      <rule id="DecisionRuleMixed_0dv4o53">
+        <condition>LiteralExpressionMixed_0lf1cai</condition>
+        <conclusion>LiteralExpressionMixed_11y5pwq</conclusion>
+      </rule>
+      <rule id="DecisionRuleMixed_0puyzet">
+        <condition>LiteralExpressionMixed_1p0ozu9</condition>
+        <conclusion>LiteralExpressionMixed_1h2yr0l</conclusion>
+      </rule>
+      <rule id="DecisionRuleMixed_0fav4hi">
+        <condition>LiteralExpressionMixed_1qwd774</condition>
+        <conclusion>LiteralExpressionMixed_0tfvveo</conclusion>
+      </rule>
+      <rule id="DecisionRuleMixed_1jin2ny">
+        <condition>LiteralExpressionMixed_0qa1tju</condition>
+        <conclusion>LiteralExpressionMixed_0nu8cye</conclusion>
+      </rule>
+      <rule id="DecisionRuleMixed_1c5oybk">
+        <condition>LiteralExpressionMixed_08ksd05</condition>
+        <conclusion>LiteralExpressionMixed_0kwgo9e</conclusion>
+      </rule>
+      <rule id="DecisionRuleMixed_1bggej9">
+        <condition>LiteralExpressionMixed_1hvq6v4</condition>
+        <conclusion>LiteralExpressionMixed_06c17mf</conclusion>
+      </rule>
+      <rule id="DecisionRuleMixed_10049nz">
+        <condition>LiteralExpressionMixed_1tryvt4</condition>
+        <conclusion>LiteralExpressionMixed_0uvow4p</conclusion>
+      </rule>
+      <rule id="DecisionRuleMixed_1musfkd">
+        <condition>LiteralExpressionMixed_0fjnzv5</condition>
+        <conclusion>LiteralExpressionMixed_0tej91h</conclusion>
+      </rule>
+      <rule id="DecisionRuleMixed_1ywcizg">
+        <condition>LiteralExpressionMixed_11hxofh</condition>
+        <conclusion>LiteralExpressionMixed_09q4czi</conclusion>
+      </rule>
+      <rule id="DecisionRuleMixed_079pqfu">
+        <condition>LiteralExpressionMixed_0o8f0y1</condition>
+        <conclusion>LiteralExpressionMixed_0g0z6ie</conclusion>
+      </rule>
+      <rule id="DecisionRuleMixed_0qda6fb">
+        <condition>LiteralExpressionMixed_1oczr90</condition>
+        <conclusion>LiteralExpressionMixed_1l16pd8</conclusion>
+      </rule>
+      <rule id="DecisionRuleMixed_1b8fvnz">
+        <condition>LiteralExpressionMixed_15otpz2</condition>
+        <conclusion>LiteralExpressionMixed_1t4mlix</conclusion>
+      </rule>
+      <rule id="DecisionRuleMixed_11dbpo0">
+        <condition>LiteralExpressionMixed_08r5wcr</condition>
+        <conclusion>LiteralExpressionMixed_1xy23tp</conclusion>
+      </rule>
+      <rule id="DecisionRuleMixed_1fycu55">
+        <condition>LiteralExpressionMixed_1s45z4t</condition>
+        <conclusion>LiteralExpressionMixed_09p5mq4</conclusion>
+      </rule>
+      <rule id="DecisionRuleMixed_1umfw43">
+        <condition>LiteralExpressionMixed_0a29l4y</condition>
+        <conclusion>LiteralExpressionMixed_1pm6o1g</conclusion>
+      </rule>
+      <rule id="DecisionRuleMixed_0wp8lfl">
+        <condition>LiteralExpressionMixed_1fc9qly</condition>
+        <conclusion>LiteralExpressionMixed_0ai034p</conclusion>
+      </rule>
+      <rule id="DecisionRuleMixed_1vx4c8u">
+        <condition>LiteralExpressionMixed_037p3gg</condition>
+        <conclusion>LiteralExpressionMixed_1c5lqeq</conclusion>
+      </rule>
+      <rule id="DecisionRuleMixed_1ts1s8k">
+        <condition>LiteralExpressionMixed_1yua1nj</condition>
+        <conclusion>LiteralExpressionMixed_1th5k8f</conclusion>
+      </rule>
+      <rule id="DecisionRuleMixed_1ggbxtx">
+        <condition>LiteralExpressionMixed_02g2x4t</condition>
+        <conclusion>LiteralExpressionMixed_1pg5vck</conclusion>
+      </rule>
+    </DecisionTable>
+  </Decision>
+</Definitions>

@@ -36,6 +36,7 @@ public class JuelScriptEngine extends AbstractScriptEngine implements Compilable
 
   protected ScriptEngineFactory scriptEngineFactory;
   protected ExpressionFactoryImpl expressionFactory;
+  protected JuelScriptElContextFactory elContextFactory;
 
   public JuelScriptEngine() {
     this(null);
@@ -44,6 +45,11 @@ public class JuelScriptEngine extends AbstractScriptEngine implements Compilable
   public JuelScriptEngine(ScriptEngineFactory scriptEngineFactory) {
     this.scriptEngineFactory = scriptEngineFactory;
     this.expressionFactory = new ExpressionFactoryImpl();
+    this.elContextFactory = new JuelScriptElContextFactory();
+  }
+
+  public void setElContextFactory(JuelScriptElContextFactory elContextFactory) {
+    this.elContextFactory = elContextFactory;
   }
 
   public CompiledScript compile(String script) throws ScriptException {
@@ -87,7 +93,7 @@ public class JuelScriptEngine extends AbstractScriptEngine implements Compilable
       elContext = (ELContext) elContextAttribute;
     }
     else {
-      elContext = new JuelScriptElContext(context, expressionFactory);
+      elContext = elContextFactory.createContext(context, expressionFactory);
       context.setAttribute(EL_CONTEXT_ATTRIBUTE, elContext, ScriptContext.ENGINE_SCOPE);
     }
 
