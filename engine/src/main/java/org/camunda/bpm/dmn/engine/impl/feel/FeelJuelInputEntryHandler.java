@@ -19,7 +19,7 @@ import org.camunda.bpm.dmn.engine.impl.DmnExpressionImpl;
 import org.camunda.bpm.dmn.engine.impl.handler.AbstractDmnClauseHandler;
 import org.camunda.bpm.model.dmn.instance.InputEntry;
 
-public class FeelInputEntryHandler extends AbstractDmnClauseHandler<InputEntry> {
+public class FeelJuelInputEntryHandler extends AbstractDmnClauseHandler<InputEntry> {
 
   protected void postProcessExpressionText(DmnElementHandlerContext context, InputEntry expression, DmnExpressionImpl dmnExpression) {
     if (hasJuelExpressionLanguage(dmnExpression) && !isExpression(dmnExpression)) {

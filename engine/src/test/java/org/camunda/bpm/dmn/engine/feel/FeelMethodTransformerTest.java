@@ -15,6 +15,7 @@ package org.camunda.bpm.dmn.engine.feel;
 
 import org.camunda.bpm.dmn.engine.impl.DmnEngineConfigurationImpl;
 import org.camunda.bpm.dmn.engine.impl.feel.FeelJuelInputEntryHandler;
+import org.camunda.bpm.dmn.engine.impl.feel.FeelMethodInputEntryHandler;
 import org.camunda.bpm.dmn.engine.impl.feel.FeelOutputEntryHandler;
 import org.camunda.bpm.dmn.engine.impl.feel.FeelScriptEngineResolver;
 import org.camunda.bpm.dmn.engine.test.DmnEngineRule;
@@ -22,7 +23,7 @@ import org.camunda.bpm.model.dmn.instance.InputEntry;
 import org.camunda.bpm.model.dmn.instance.OutputEntry;
 import org.junit.Rule;
 
-public class FeelJuelTransformerTest extends FeelTheJuelTest {
+public class FeelMethodTransformerTest extends FeelTheJuelTest {
 
   @Rule
   public DmnEngineRule dmnEngineRule = new DmnEngineRule(new FeelJuelEngineConfiguration());
@@ -39,7 +40,7 @@ public class FeelJuelTransformerTest extends FeelTheJuelTest {
 
     protected void initElementHandlerRegistry() {
       super.initElementHandlerRegistry();
-      elementHandlerRegistry.getElementHandlers().put(InputEntry.class, new FeelJuelInputEntryHandler());
+      elementHandlerRegistry.getElementHandlers().put(InputEntry.class, new FeelMethodInputEntryHandler());
       elementHandlerRegistry.getElementHandlers().put(OutputEntry.class, new FeelOutputEntryHandler());
     }
 

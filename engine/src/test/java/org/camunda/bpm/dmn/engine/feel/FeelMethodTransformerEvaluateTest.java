@@ -26,14 +26,16 @@ import javax.el.ExpressionFactory;
 import javax.el.FunctionMapper;
 import javax.el.ValueExpression;
 
+import org.camunda.bpm.dmn.engine.impl.feel.FeelFunctionMapper;
 import org.camunda.bpm.dmn.engine.impl.feel.FeelJuelTransformer;
+import org.camunda.bpm.dmn.engine.impl.feel.FeelMethodTransformer;
 import org.junit.Before;
 import org.junit.Test;
 
 import de.odysseus.el.ExpressionFactoryImpl;
 import de.odysseus.el.util.SimpleContext;
 
-public class FeelJuelTransformerEvaluateTest {
+public class FeelMethodTransformerEvaluateTest {
 
   protected Map<String, Object> variables;
 
@@ -151,7 +153,7 @@ public class FeelJuelTransformerEvaluateTest {
   @Test
   public void testEndpointDate() throws ParseException {
     String dateString = "2015-12-12";
-    Date date = parseDate(dateString);
+    Date date = FeelFunctionMapper.parseDate(dateString);
     assertTrue(date, "date(\"2015-12-12\")");
 
     variables.put("y", "2015-12-12");
@@ -217,7 +219,7 @@ public class FeelJuelTransformerEvaluateTest {
 
   @Test
   public void testIntervalDate() throws ParseException {
-    Date date = parseDate("2016-03-03");
+    Date date = FeelFunctionMapper.parseDate("2016-03-03");
     assertTrue(date, "[date(\"2015-12-12\")..date(\"2016-06-06\")]");
     assertTrue(date, "[date(\"2015-12-12\")..date(\"2016-06-06\"))");
     assertTrue(date, "[date(\"2015-12-12\")..date(\"2016-06-06\")[");
@@ -230,7 +232,7 @@ public class FeelJuelTransformerEvaluateTest {
     assertTrue(date, "]date(\"2015-12-12\")..date(\"2016-06-06\"))");
     assertTrue(date, "]date(\"2015-12-12\")..date(\"2016-06-06\")[");
 
-    date = parseDate("2013-03-03");
+    date = FeelFunctionMapper.parseDate("2013-03-03");
     assertFalse(date, "[date(\"2015-12-12\")..date(\"2016-06-06\")]");
     assertFalse(date, "[date(\"2015-12-12\")..date(\"2016-06-06\"))");
     assertFalse(date, "[date(\"2015-12-12\")..date(\"2016-06-06\")[");
@@ -317,7 +319,7 @@ public class FeelJuelTransformerEvaluateTest {
     }
 
     // create expression
-    String expression = FeelJuelTransformer.transformFeel("input", feelExpression);
+    String expression = FeelMethodTransformer.transformFeel("input", feelExpression);
     ValueExpression valueExpression = factory.createValueExpression(context, expression, boolean.class);
 
     // evaluate
@@ -325,19 +327,7 @@ public class FeelJuelTransformerEvaluateTest {
   }
 
   public static SimpleContext createElContext() {
-    try {
-      Method parseDate = FeelJuelTransformerEvaluateTest.class.getMethod("parseDate", String.class);
-      TestFunctionMapper functionMapper = new TestFunctionMapper("date", parseDate);
-      return new TestElContext(functionMapper);
-    }
-    catch (Exception e) {
-      throw new RuntimeException("Unable to map 'date' function", e);
-    }
-  }
-
-  public static Date parseDate(String dateString) throws ParseException {
-    SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
-    return dateFormat.parse(dateString);
+    return new TestElContext(new FeelFunctionMapper());
   }
 
   public static class TestElContext extends SimpleContext {
@@ -351,27 +341,6 @@ public class FeelJuelTransformerEvaluateTest {
     @Override
     public FunctionMapper getFunctionMapper() {
       return functionMapper;
-    }
-
-  }
-
-  public static class TestFunctionMapper extends FunctionMapper {
-
-    public String localName;
-    public Method function;
-
-    public TestFunctionMapper(String localName, Method function) {
-      this.localName = localName;
-      this.function = function;
-    }
-
-    public Method resolveFunction(String prefix, String localName) {
-      if (localName.equals(this.localName)) {
-        return function;
-      }
-      else {
-        return null;
-      }
     }
 
   }
