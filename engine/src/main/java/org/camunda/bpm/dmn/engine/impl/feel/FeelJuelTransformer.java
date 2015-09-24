@@ -31,6 +31,10 @@ public class FeelJuelTransformer {
   }
 
   public static String transformSimpleUnaryTests(String input, String simpleUnaryTests) {
+    if (simpleUnaryTests.equals("-")) {
+      return "true";
+    }
+
     Matcher matcher = NOT_PATTERN.matcher(simpleUnaryTests);
     if (matcher.matches()) {
       return transformNotSimplePositiveUnaryTests(input, matcher);

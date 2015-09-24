@@ -296,6 +296,11 @@ public class FeelMethodTransformerEvaluateTest {
     assertFalse(0, "not(>=a,13.37,].37...42),<.37)");
   }
 
+  @Test
+  public void testDontCare() {
+    assertTrue(13.37, "-");
+  }
+
   public void assertTrue(Object input, String feelExpression) {
     variables.put("input", input);
     Boolean result = evaluate(variables, feelExpression);

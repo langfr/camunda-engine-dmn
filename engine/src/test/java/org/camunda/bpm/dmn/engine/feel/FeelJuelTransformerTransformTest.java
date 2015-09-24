@@ -212,6 +212,11 @@ public class FeelJuelTransformerTransformTest {
     assertTransform("x", "not(>=a,13.37,].37...42),<.37)", "${not((x >= a) || (x == 13.37) || (.37 < x && x < .42) || (x < .37))}");
   }
 
+  @Test
+  public void testDontCare() {
+    assertTransform("x", "-", "${true}");
+  }
+
   public void assertTransform(String input, String feelExpression, String expectedExpression) {
     String expression = FeelJuelTransformer.transformFeel(input, feelExpression);
     assertThat(expression).isEqualTo(expectedExpression);

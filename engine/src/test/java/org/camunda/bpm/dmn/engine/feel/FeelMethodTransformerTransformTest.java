@@ -212,6 +212,11 @@ public class FeelMethodTransformerTransformTest {
     assertTransform("x", "not(>=a,13.37,].37...42),<.37)", "${not(compare(x,a,\">=\") || compare(x,13.37,\"==\") || interval(x,.37,.42,false,false) || compare(x,.37,\"<\"))}");
   }
 
+  @Test
+  public void testDontCare() {
+    assertTransform("x", "-", "${true}");
+  }
+
   public void assertTransform(String input, String feelExpression, String expectedExpression) {
     String expression = FeelMethodTransformer.transformFeel(input, feelExpression);
     assertThat(expression).isEqualTo(expectedExpression);
